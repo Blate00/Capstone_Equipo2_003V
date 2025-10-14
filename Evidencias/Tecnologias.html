@@ -1,0 +1,349 @@
+<style>@page {
+            margin: 2cm;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+            opacity: 0.95;
+        }
+        .section {
+            margin-bottom: 35px;
+            page-break-inside: avoid;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        .tech-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #667eea;
+        }
+        .tech-item.highlight {
+            background: #e8eaf6;
+            border-left-color: #ff6b6b;
+        }
+        .tech-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        .tech-purpose {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+        .tech-advantages {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        .tech-cost {
+            font-size: 14px;
+            font-weight: 600;
+            color: #27ae60;
+        }
+        .special-note {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .special-note h3 {
+            color: #856404;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .special-note ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        .special-note li {
+            margin: 8px 0;
+            color: #856404;
+        }
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .cost-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .cost-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .cost-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .cost-table tr:last-child {
+            font-weight: 700;
+            background: #e8eaf6;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .benefit-card {
+            background: #f0f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .benefit-card strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+        @media print {
+            body {
+                background: white;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }</style>
+<div class="header">
+  <h1>🚀 Stack Tecnológico</h1>
+  <p>Proyecto BRP - Arquitectura Full-Stack Moderna</p>
+</div>
+<div class="section">
+  <h2 class="section-title">📋 Resumen Ejecutivo</h2>
+  <p>Stack moderno y eficiente para desarrollo full-stack, optimizado para rendimiento y despliegue continuo con 
+    <strong>costo mínimo</strong>. Todas las tecnologías fueron seleccionadas por su madurez, comunidad activa y capacidad de escalar.
+  </p>
+</div>
+<div class="section">
+  <h2 class="section-title">🎨 Frontend</h2>
+  <div class="tech-item">
+    <div class="tech-name">React 18 - Framework Principal</div>
+    <div class="tech-purpose">Propósito: Interfaz de usuario interactiva y reactiva</div>
+    <div class="tech-advantages">Ventajas: Virtual DOM optimizado, hooks modernos, concurrent rendering para mejor UX</div>
+    <div class="tech-cost">💰 Costo: Gratis ✅</div>
+  </div>
+  <div class="tech-item">
+    <div class="tech-name">Vite - Build Tool</div>
+    <div class="tech-purpose">Propósito: Build ultrarrápido, Hot Module Replacement (HMR), bundling optimizado</div>
+    <div class="tech-advantages">Ventajas: Desarrollo 10-100x más rápido que Webpack, builds optimizados</div>
+    <div class="tech-cost">💰 Costo: Gratis ✅</div>
+  </div>
+  <div class="tech-item highlight">
+    <div class="tech-name">⭐ pnpm - Package Manager</div>
+    <div class="tech-purpose">Propósito: Gestión eficiente de dependencias del proyecto</div>
+    <div class="tech-advantages">Ventajas: Sistema de enlaces simbólicos, instalaciones 2x más rápidas, seguridad mejorada</div>
+    <div class="tech-cost">💰 Costo: Gratis ✅</div>
+  </div>
+  <div class="special-note">
+    <h3>🔄 Cambio de npm a pnpm - Justificación Técnica</h3>
+    <ul>
+      <li>
+        <strong>📦 Ahorro de espacio en disco:</strong> Hasta 3x menos espacio mediante sistema de enlaces simbólicos. Un solo caché global para todas las dependencias.
+      </li>
+      <li>
+        <strong>⚡ Instalaciones más rápidas:</strong> 2x más rápido que npm y yarn en instalaciones. Paralelización inteligente de descargas.
+      </li>
+      <li>
+        <strong>🔒 Mayor seguridad:</strong> Estructura de node_modules más estricta que previene el acceso a dependencias no declaradas explícitamente.
+      </li>
+      <li>
+        <strong>🎯 Mejor gestión de monorepos:</strong> Workspaces nativos optimizados para proyectos multi-paquete.
+      </li>
+      <li>
+        <strong>💰 Menor uso de recursos:</strong> Ideal para proyectos con múltiples dependencias y equipos de desarrollo.
+      </li>
+      <li>
+        <strong>🔧 Compatibilidad total:</strong> Drop-in replacement de npm. Mismo package.json y comandos similares.
+      </li>
+    </ul>
+  </div>
+  <div class="tech-item">
+    <div class="tech-name">JavaScript/JSX - Lenguaje Frontend</div>
+    <div class="tech-purpose">Propósito: Lógica del cliente y componentes React</div>
+    <div class="tech-advantages">Ventajas: Sintaxis familiar, ecosistema robusto, integración perfecta con React</div>
+    <div class="tech-cost">💰 Costo: Gratis ✅</div>
+  </div>
+  <div class="tech-item highlight">
+    <div class="tech-name">⭐ Tailwind CSS - Framework de Estilos</div>
+    <div class="tech-purpose">Propósito: Utility-first CSS framework para diseño rápido y consistente</div>
+    <div class="tech-advantages">Ventajas: Sin CSS personalizado, componentes reutilizables, tree-shaking automático, bundle pequeño</div>
+    <div class="tech-cost">💰 Costo: Gratis ✅</div>
+  </div>
+  <div class="tech-item">
+    <div class="tech-name">React Router - Sistema de Navegación</div>
+    <div class="tech-purpose">Propósito: Navegación SPA (Single Page Application)</div>
+    <div class="tech-advantages">Ventajas: Enrutamiento declarativo, lazy loading de rutas, navegación programática</div>
+    <div class="tech-cost">💰 Costo: Gratis ✅</div>
+  </div>
+</div>
+<div class="section">
+  <h2 class="section-title">⚙️ Backend</h2>
+  <div class="tech-item">
+    <div class="tech-name">Node.js - Runtime de JavaScript</div>
+    <div class="tech-purpose">Propósito: Servidor backend de alto rendimiento</div>
+    <div class="tech-advantages">Ventajas: Event-driven, non-blocking I/O, mismo lenguaje que frontend, ecosistema npm robusto</div>
+    <div class="tech-cost">💰 Costo: Gratis ✅</div>
+  </div>
+  <div class="tech-item">
+    <div class="tech-name">Express.js - Framework Backend</div>
+    <div class="tech-purpose">Propósito: API REST minimalista y flexible</div>
+    <div class="tech-advantages">Ventajas: Middleware robusto, fácil integración, comunidad activa, gran cantidad de plugins</div>
+    <div class="tech-cost">💰 Costo: Gratis ✅</div>
+  </div>
+  <div class="tech-item">
+    <div class="tech-name">JavaScript - Lenguaje Backend</div>
+    <div class="tech-purpose">Propósito: Lógica del servidor, endpoints, middlewares y servicios</div>
+    <div class="tech-advantages">Ventajas: Full-stack JavaScript, compartir código entre frontend y backend, reducción de context switching</div>
+    <div class="tech-cost">💰 Costo: Gratis ✅</div>
+  </div>
+</div>
+<div class="section">
+  <h2 class="section-title">💾 Base de Datos y Servicios</h2>
+  <div class="tech-item">
+    <div class="tech-name">PostgreSQL (via Supabase) - Base de Datos</div>
+    <div class="tech-purpose">Propósito: Almacenamiento persistente y confiable de datos</div>
+    <div class="tech-advantages">Ventajas: ACID compliant, base de datos relacional robusta, escalable, soporte para JSON</div>
+    <div class="tech-cost">💰 Costo: $0-25/mes* ✅</div>
+  </div>
+  <div class="tech-item">
+    <div class="tech-name">Supabase - Backend as a Service (BaaS)</div>
+    <div class="tech-purpose">Propósito: Autenticación, Storage, Real-time subscriptions, Row Level Security</div>
+    <div class="tech-advantages">Ventajas: PostgreSQL directo, APIs auto-generadas, dashboard intuitivo, alternativa open-source a Firebase</div>
+    <div class="tech-cost">💰 Costo: $0-25/mes* ✅</div>
+  </div>
+</div>
+<div class="section">
+  <h2 class="section-title">🌐 Hosting y Deploy</h2>
+  <div class="tech-item highlight">
+    <div class="tech-name">⭐ Cloudflare Pages - Hosting Frontend</div>
+    <div class="tech-purpose">Propósito: Deploy frontend 24/7 con CDN global</div>
+    <div class="tech-advantages">Ventajas: Edge computing, SSL gratis, builds ilimitados, latencia ultra-baja, DDoS protection</div>
+    <div class="tech-cost">💰 Costo: Gratis ✅</div>
+  </div>
+  <div class="tech-item">
+    <div class="tech-name">Railway - Hosting Backend</div>
+    <div class="tech-purpose">Propósito: Deploy backend 24/7 con escalabilidad automática</div>
+    <div class="tech-advantages">Ventajas: Deploy desde Git, variables de entorno, logs en tiempo real, rollback fácil</div>
+    <div class="tech-cost">💰 Costo: $0-5/mes* ✅</div>
+  </div>
+  <div class="tech-item">
+    <div class="tech-name">Cloudflare - CDN y Seguridad</div>
+    <div class="tech-purpose">Propósito: HTTPS automático, caché global, protección DDoS</div>
+    <div class="tech-advantages">Ventajas: Latencia reducida globalmente, seguridad enterprise-grade, analytics incluido</div>
+    <div class="tech-cost">💰 Costo: Gratis ✅</div>
+  </div>
+</div>
+<div class="section">
+  <h2 class="section-title">🔧 DevOps y Control de Versiones</h2>
+  <div class="tech-item">
+    <div class="tech-name">Git + GitHub - Control de Versiones</div>
+    <div class="tech-purpose">Propósito: Historial de código, colaboración en equipo, branching strategy</div>
+    <div class="tech-advantages">Ventajas: Estándar de la industria, integración con CI/CD, code review, issue tracking</div>
+    <div class="tech-cost">💰 Costo: Gratis ✅</div>
+  </div>
+  <div class="tech-item">
+    <div class="tech-name">Cloudflare + Railway - CI/CD</div>
+    <div class="tech-purpose">Propósito: Deploy automático en cada push a main/production</div>
+    <div class="tech-advantages">Ventajas: Zero-downtime deployments, rollback automático, preview deployments para PRs</div>
+    <div class="tech-cost">💰 Costo: Gratis ✅</div>
+  </div>
+</div>
+<div class="section">
+  <h2 class="section-title">💰 Resumen de Costos Mensuales</h2>
+  <table class="cost-table">
+    <thead>
+      <tr>
+        <th>Categoría</th>
+        <th>Costo Mensual</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Frontend completo (React + Vite + Tailwind + Cloudflare)</td>
+        <td>$0</td>
+      </tr>
+      <tr>
+        <td>Backend (Node.js + Express + Railway)</td>
+        <td>$0-5</td>
+      </tr>
+      <tr>
+        <td>Base de datos (PostgreSQL + Supabase)</td>
+        <td>$0-25</td>
+      </tr>
+      <tr>
+        <td>DevOps (Git + GitHub + CI/CD)</td>
+        <td>$0</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Total Estimado</strong>
+        </td>
+        <td>
+          <strong>$0-30/mes</strong>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size: 12px; color: #666; font-style: italic;">* Los costos pueden variar según uso. El tier gratuito cubre proyectos pequeños/medianos perfectamente.</p>
+</div>
+<div class="section">
+  <h2 class="section-title">🎯 Ventajas Clave del Stack</h2>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <strong>100% JavaScript/TypeScript</strong> Un solo lenguaje en todo el stack facilita el desarrollo y reduce la curva de aprendizaje
+    </div>
+    <div class="benefit-card">
+      <strong>Hosting Gratuito/Económico</strong> Perfecto para MVPs, startups y producción sin inversión inicial significativa
+    </div>
+    <div class="benefit-card">
+      <strong>Deploy Automático</strong> Push to deploy en ambos ambientes. CI/CD integrado sin configuración compleja
+    </div>
+    <div class="benefit-card">
+      <strong>Escalabilidad</strong> Crece con tu proyecto sin necesidad de cambios arquitectónicos mayores
+    </div>
+    <div class="benefit-card">
+      <strong>DX Excepcional</strong> Herramientas modernas que mejoran la productividad del equipo de desarrollo
+    </div>
+    <div class="benefit-card">
+      <strong>Performance Optimizado</strong> Vite + Cloudflare CDN + pnpm = experiencia de usuario ultrarrápida
+    </div>
+  </div>
+</div>

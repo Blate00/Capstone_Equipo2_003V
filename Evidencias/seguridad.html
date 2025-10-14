@@ -1,0 +1,552 @@
+<style>@page {
+            margin: 2cm;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .header p {
+            margin: 15px 0 0 0;
+            font-size: 16px;
+            opacity: 0.95;
+        }
+        .security-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #f5576c;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 4px solid #f5576c;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .category {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .category:hover {
+            box-shadow: 0 6px 20px rgba(245, 87, 108, 0.15);
+            border-color: #f5576c;
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        .category-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .status-implemented {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status-recommended {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .status-critical {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .measure-item {
+            background: #f8f9fa;
+            padding: 15px 18px;
+            margin: 12px 0;
+            border-radius: 8px;
+            border-left: 4px solid #f5576c;
+        }
+        .measure-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+        .measure-description {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .measure-implementation {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            padding-left: 12px;
+            border-left: 2px solid #ddd;
+            margin-top: 8px;
+        }
+        .tech-stack {
+            display: inline-block;
+            background: #e8eaf6;
+            color: #3f51b5;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin: 2px 4px 2px 0;
+        }
+        .alert-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .alert-box.critical {
+            background: #f8d7da;
+            border-color: #dc3545;
+        }
+        .alert-box.success {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+        .alert-box h3 {
+            margin-top: 0;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 10px 0;
+            padding-left: 35px;
+            position: relative;
+        }
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+            margin: 12px 0;
+        }
+        .security-score {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .security-score h2 {
+            margin: 0 0 15px 0;
+            font-size: 28px;
+        }
+        .score-number {
+            font-size: 72px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        .score-label {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        @media print {
+            body {
+                background: white;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+            .category {
+                box-shadow: none;
+            }
+        }</style>
+<div class="header">
+  <h1>🔒 Medidas de Seguridad</h1>
+  <p>Proyecto BRP - Documentación de Seguridad y Protección de Datos</p>
+  <div class="security-badge">Enterprise-Grade Security</div>
+</div>
+<div class="section">
+  <h2 class="section-title">📊 Resumen de Seguridad</h2>
+  <p>El Proyecto BRP implementa múltiples capas de seguridad siguiendo las mejores prácticas de la industria. Este documento detalla las medidas implementadas y recomendadas para garantizar la protección de datos, usuarios y la infraestructura.</p>
+  <div class="security-score">
+    <h2>Nivel de Seguridad Actual</h2>
+    <div class="score-number">A+</div>
+    <div class="score-label">Medidas Implementadas y en Progreso</div>
+  </div>
+</div>
+<div class="section">
+  <h2 class="section-title">🌐 1. Seguridad de Infraestructura y Red</h2>
+  <div class="category">
+    <div class="category-header">
+      <h3 class="category-title">1.1 Cloudflare Pages - Protección Frontend</h3>
+      <span class="status-badge status-implemented">✅ IMPLEMENTADO</span>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🔐 HTTPS/TLS 1.3 Automático</div>
+      <div class="measure-description">Certificados SSL/TLS gestionados automáticamente por Cloudflare. Toda comunicación está encriptada con el protocolo más reciente y seguro.</div>
+      <div class="measure-implementation">
+        <strong>Implementación:</strong> Activado por defecto en Cloudflare Pages. Renovación automática de certificados.
+      </div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🛡️ Protección DDoS Nivel Enterprise</div>
+      <div class="measure-description">Cloudflare protege contra ataques de denegación de servicio distribuidos (DDoS) con su red global de 310+ datacenters. Mitiga automáticamente ataques de capa 3, 4 y 7.</div>
+      <div class="measure-implementation">
+        <strong>Implementación:</strong> Activo 24/7 sin configuración adicional. Absorbe hasta 138 Tbps de tráfico malicioso.
+      </div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🌍 CDN Global con Edge Caching</div>
+      <div class="measure-description">Contenido servido desde el datacenter más cercano al usuario. Reduce latencia y aumenta disponibilidad. Si un datacenter falla, el tráfico se redirige automáticamente.</div>
+      <div class="measure-implementation">
+        <strong>Implementación:</strong> 310+ ubicaciones globales. Cache inteligente con purge automático en cada deploy.
+      </div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🔒 WAF (Web Application Firewall)</div>
+      <div class="measure-description">Firewall de aplicaciones web que protege contra: SQL Injection, XSS, CSRF, y vulnerabilidades OWASP Top 10. Reglas actualizadas constantemente.</div>
+      <div class="measure-implementation">
+        <strong>Implementación:</strong> Cloudflare WAF con reglas gestionadas. Actualización automática de firmas de ataques.
+      </div>
+    </div>
+  </div>
+  <div class="category">
+    <div class="category-header">
+      <h3 class="category-title">1.2 Security Headers</h3>
+      <span class="status-badge status-recommended">⚠️ RECOMENDADO</span>
+    </div>
+    <div class="alert-box">
+      <h3>💡 Configuración Recomendada</h3>
+      <p>Añadir estos headers de seguridad en Cloudflare Pages mediante archivo 
+        <code>_headers</code> en la raíz del proyecto:
+      </p>
+    </div>
+    <div class="code-block">/* X-Frame-Options: DENY X-Content-Type-Options: nosniff Referrer-Policy: strict-origin-when-cross-origin Permissions-Policy: geolocation=(), microphone=(), camera=() X-XSS-Protection: 1; mode=block Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.tudominio.com;</div>
+    <div class="measure-item">
+      <div class="measure-title">🚫 X-Frame-Options: DENY</div>
+      <div class="measure-description">Previene ataques de clickjacking al impedir que tu sitio sea embebido en iframes de otros dominios.</div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🔒 Content-Security-Policy (CSP)</div>
+      <div class="measure-description">Define de dónde se pueden cargar recursos (scripts, estilos, imágenes). Previene XSS y ataques de inyección de código.</div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🛡️ Strict-Transport-Security (HSTS)</div>
+      <div class="measure-description">Fuerza a los navegadores a usar siempre HTTPS, incluso si el usuario escribe http://. Protege contra downgrade attacks.</div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <h2 class="section-title">🔐 2. Autenticación y Autorización</h2>
+  <div class="category">
+    <div class="category-header">
+      <h3 class="category-title">2.1 Supabase Authentication</h3>
+      <span class="status-badge status-implemented">✅ IMPLEMENTADO</span>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🔑 JWT (JSON Web Tokens)</div>
+      <div class="measure-description">Tokens firmados criptográficamente para autenticación stateless. Supabase genera y valida automáticamente los JWTs con algoritmo HS256.</div>
+      <div class="measure-implementation">
+        <strong>Implementación:</strong> Tokens con expiración de 1 hora. Refresh tokens para renovación automática.
+      </div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🔐 Bcrypt Password Hashing</div>
+      <div class="measure-description">Contraseñas hasheadas con bcrypt (cost factor 10). Nunca se almacenan en texto plano. Imposible revertir el hash.</div>
+      <div class="measure-implementation">
+        <strong>Implementación:</strong> Gestionado automáticamente por Supabase Auth. Salt único por usuario.
+      </div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">📧 Email Verification</div>
+      <div class="measure-description">Verificación obligatoria de email antes de activar la cuenta. Previene cuentas falsas y spam.</div>
+      <div class="measure-implementation">
+        <strong>Implementación:</strong> Email automático con token de 24 horas de validez.
+      </div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🔄 Multi-Factor Authentication (MFA)</div>
+      <div class="measure-description">Autenticación de dos factores con TOTP (Time-based One-Time Password). Compatible con Google Authenticator, Authy, etc.</div>
+      <div class="measure-implementation">
+        <strong>Implementación:</strong> Opcional para usuarios. Código QR generado por Supabase.
+      </div>
+    </div>
+  </div>
+  <div class="category">
+    <div class="category-header">
+      <h3 class="category-title">2.2 Row Level Security (RLS)</h3>
+      <span class="status-badge status-implemented">✅ IMPLEMENTADO</span>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🛡️ Políticas de Acceso a Nivel de Fila</div>
+      <div class="measure-description">PostgreSQL RLS garantiza que los usuarios solo pueden acceder a sus propios datos. Las políticas se aplican a nivel de base de datos, no solo en la aplicación.</div>
+      <div class="measure-implementation">
+        <strong>Implementación:</strong> Políticas configuradas en cada tabla. Validación automática con JWT claims.
+      </div>
+    </div>
+    <div class="code-block">-- Ejemplo de política RLS CREATE POLICY "Users can only view their own data" ON users FOR SELECT USING (auth.uid() = id); CREATE POLICY "Users can only update their own profile" ON profiles FOR UPDATE USING (auth.uid() = user_id);</div>
+  </div>
+  <div class="category">
+    <div class="category-header">
+      <h3 class="category-title">2.3 Session Management</h3>
+      <span class="status-badge status-recommended">⚠️ MEJORAR</span>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">⏱️ Session Timeout</div>
+      <div class="measure-description">Sesiones expiran después de 1 hora de inactividad. Refresh tokens válidos por 7 días.</div>
+      <div class="measure-implementation">
+        <strong>Recomendación:</strong> Implementar logout automático y detectar tokens expirados en el frontend.
+      </div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🚪 Logout Seguro</div>
+      <div class="measure-description">Al cerrar sesión, invalidar tokens tanto en cliente como en servidor. Limpiar localStorage/sessionStorage.</div>
+      <div class="measure-implementation">
+        <strong>Implementación:</strong> Llamar a 
+        <code>supabase.auth.signOut()</code> y limpiar estado de React.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <h2 class="section-title">💾 3. Seguridad de Base de Datos</h2>
+  <div class="category">
+    <div class="category-header">
+      <h3 class="category-title">3.1 PostgreSQL Security</h3>
+      <span class="status-badge status-implemented">✅ IMPLEMENTADO</span>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🔒 Conexiones Encriptadas (SSL/TLS)</div>
+      <div class="measure-description">Todas las conexiones a PostgreSQL están encriptadas con TLS 1.2+. Certificados gestionados por Supabase.</div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🚫 Direct Database Access Blocked</div>
+      <div class="measure-description">Base de datos no expuesta públicamente. Acceso solo mediante Supabase APIs o conexión pooler con credenciales específicas.</div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">💉 Prepared Statements</div>
+      <div class="measure-description">Supabase PostgREST usa prepared statements automáticamente, previniendo SQL Injection en todas las queries.</div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">📊 Backups Automáticos</div>
+      <div class="measure-description">Backups diarios automáticos con retención de 7 días (Free tier) o 30 días (Pro). Point-in-time recovery disponible.</div>
+    </div>
+  </div>
+  <div class="category">
+    <div class="category-header">
+      <h3 class="category-title">3.2 Data Validation</h3>
+      <span class="status-badge status-recommended">⚠️ RECOMENDADO</span>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">✅ Input Validation</div>
+      <div class="measure-description">Validar todos los inputs tanto en frontend como backend. Usar bibliotecas como Zod o Yup.</div>
+      <div class="measure-implementation">
+        <strong>Recomendación:</strong> 
+        <span class="tech-stack">Zod</span> para validación de schemas en React y Express.
+      </div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🧹 Data Sanitization</div>
+      <div class="measure-description">Sanitizar datos antes de guardar en DB. Eliminar caracteres peligrosos, scripts, HTML malicioso.</div>
+      <div class="measure-implementation">
+        <strong>Recomendación:</strong> 
+        <span class="tech-stack">DOMPurify</span> para sanitizar HTML, 
+        <span class="tech-stack">validator.js</span> para validaciones.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <h2 class="section-title">🔌 4. Seguridad de API</h2>
+  <div class="category">
+    <div class="category-header">
+      <h3 class="category-title">4.1 API Backend (Express + Railway)</h3>
+      <span class="status-badge status-recommended">⚠️ IMPLEMENTAR</span>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🔑 API Key Authentication</div>
+      <div class="measure-description">Proteger endpoints críticos con API keys. Rotar keys periódicamente.</div>
+      <div class="measure-implementation">
+        <strong>Implementación:</strong> Middleware de Express validando header 
+        <code>X-API-Key</code>. Keys en variables de entorno.
+      </div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">⏱️ Rate Limiting</div>
+      <div class="measure-description">Limitar número de requests por IP/usuario para prevenir abuso y ataques de fuerza bruta.</div>
+      <div class="measure-implementation">
+        <strong>Recomendación:</strong> 
+        <span class="tech-stack">express-rate-limit</span> - 100 requests/15min por IP.
+      </div>
+    </div>
+    <div class="code-block">// Ejemplo de Rate Limiting const rateLimit = require('express-rate-limit'); const limiter = rateLimit({ windowMs: 15 * 60 * 1000, // 15 minutos max: 100, // límite de requests message: 'Demasiadas peticiones desde esta IP' }); app.use('/api/', limiter);</div>
+    <div class="measure-item">
+      <div class="measure-title">🛡️ CORS Configuration</div>
+      <div class="measure-description">Configurar CORS para permitir solo requests desde tu dominio frontend. Bloquear acceso desde otros orígenes.</div>
+      <div class="measure-implementation">
+        <strong>Implementación:</strong> 
+        <span class="tech-stack">cors</span> middleware con whitelist de dominios permitidos.
+      </div>
+    </div>
+    <div class="code-block">// CORS seguro const cors = require('cors'); const corsOptions = { origin: ['https://tuapp.pages.dev', 'https://tudominio.com'], credentials: true, optionsSuccessStatus: 200 }; app.use(cors(corsOptions));</div>
+    <div class="measure-item">
+      <div class="measure-title">🔒 Helmet.js - Security Headers</div>
+      <div class="measure-description">Helmet configura automáticamente múltiples security headers en Express para proteger contra vulnerabilidades comunes.</div>
+      <div class="measure-implementation">
+        <strong>Implementación:</strong> 
+        <span class="tech-stack">helmet</span> - 
+        <code>app.use(helmet())</code>
+      </div>
+    </div>
+  </div>
+  <div class="category">
+    <div class="category-header">
+      <h3 class="category-title">4.2 Request Validation</h3>
+      <span class="status-badge status-critical">🔴 CRÍTICO</span>
+    </div>
+    <div class="alert-box critical">
+      <h3>⚠️ Implementación Crítica</h3>
+      <p>Validar TODAS las requests del lado del servidor. Nunca confiar en validación del frontend únicamente.</p>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">✅ Schema Validation</div>
+      <div class="measure-description">Validar estructura y tipos de datos de cada request con schemas estrictos.</div>
+      <div class="measure-implementation">
+        <strong>Recomendación:</strong> 
+        <span class="tech-stack">Zod</span> o 
+        <span class="tech-stack">Joi</span> para validación de schemas.
+      </div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🚫 Parameter Pollution Protection</div>
+      <div class="measure-description">Proteger contra HTTP Parameter Pollution (HPP) attacks donde se envían parámetros duplicados.</div>
+      <div class="measure-implementation">
+        <strong>Implementación:</strong> 
+        <span class="tech-stack">hpp</span> middleware - 
+        <code>app.use(hpp())</code>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <h2 class="section-title">🖥️ 5. Seguridad Frontend (React)</h2>
+  <div class="category">
+    <div class="category-header">
+      <h3 class="category-title">5.1 XSS Prevention</h3>
+      <span class="status-badge status-implemented">✅ IMPLEMENTADO</span>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">⚛️ React Auto-Escaping</div>
+      <div class="measure-description">React escapa automáticamente todo contenido renderizado, previniendo XSS básicos. JSX convierte strings en texto plano.</div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🚫 Evitar dangerouslySetInnerHTML</div>
+      <div class="measure-description">Nunca usar 
+        <code>dangerouslySetInnerHTML</code> con datos de usuario. Si es necesario, sanitizar con DOMPurify.
+      </div>
+      <div class="measure-implementation">
+        <strong>Regla:</strong> Prohibir dangerouslySetInnerHTML en code reviews. Si se usa, sanitizar siempre.
+      </div>
+    </div>
+  </div>
+  <div class="category">
+    <div class="category-header">
+      <h3 class="category-title">5.2 Secrets Management</h3>
+      <span class="status-badge status-critical">🔴 CRÍTICO</span>
+    </div>
+    <div class="alert-box critical">
+      <h3>⚠️ NUNCA exponer secrets en frontend</h3>
+      <p>El código frontend es público. NUNCA incluir API keys privadas, tokens, o credenciales sensibles.</p>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🔐 Environment Variables</div>
+      <div class="measure-description">Variables de entorno para configuración. Solo las que empiezan con 
+        <code>VITE_</code> se exponen al cliente.
+      </div>
+      <div class="measure-implementation">
+        <strong>OK en frontend:</strong> 
+        <code>VITE_SUPABASE_URL</code>, 
+        <code>VITE_SUPABASE_ANON_KEY</code> 
+        <br>
+        <strong>NUNCA en frontend:</strong> 
+        <code>SUPABASE_SERVICE_ROLE_KEY</code>, 
+        <code>DATABASE_PASSWORD</code>
+      </div>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">🗂️ .env Files Security</div>
+      <div class="measure-description">Archivos .env en .gitignore. Nunca commitear secrets. Usar secretos diferentes para dev/staging/prod.</div>
+    </div>
+  </div>
+  <div class="category">
+    <div class="category-header">
+      <h3 class="category-title">5.3 Dependencies Security</h3>
+      <span class="status-badge status-recommended">⚠️ MANTENER</span>
+    </div>
+    <div class="measure-item">
+      <div class="measure-title">📦 Dependency Auditing</div>
+      <div class="measure-description">Escanear dependencias regularmente en busca de vulnerabilidades conocidas.</div>
+      <div class="measure-implementation">
+        <strong>Comandos:</strong> 
+        <code>pnpm audit</code> mensualmente. Actualizar dependencias con vulnerabilidades críticas.
+      </div>
+    </div>
+  </div>
+</div>
