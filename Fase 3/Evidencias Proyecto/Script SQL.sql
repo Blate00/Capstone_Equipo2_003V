@@ -1,5 +1,4 @@
--- WARNING: This schema is for context only and is not meant to be run.
--- Table order and constraints may not be valid for execution.
+
 
 CREATE TABLE public.assignments (
   assignment_id integer NOT NULL DEFAULT nextval('assignments_assignment_id_seq'::regclass),
